@@ -1,0 +1,32 @@
+classs node:
+    def __init__(Self,data):
+        Self.data=data
+        Self.next=None
+n1=node("Oru kili oru kili")
+n2=node("Attention")
+n3=node("Blackswan")
+n4=node("Drunk dazed")
+n5=node("Fake love")
+n6=node("Titli")
+n7=node("Kaarkuzhal kadavaiye")
+n8=node("Genie in a bottle")
+n9=node("Janam janam")
+n10=node("Shinunuga-e-wa")
+n1.next=n2
+n2.next=n3
+n3.next=n4
+n4.next=n5
+n5.next=n6
+n6.next=n7
+n7.next=n8
+n8.next=n9
+n9.next=n10
+head=n1
+new_node=node("Akh lad jaave")
+new_node.next=n1
+head=new_node
+temp=head
+while temp is not None:
+    print(temp.data,end="\n")
+    temp=temp.next
+print("None")
