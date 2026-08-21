@@ -1,0 +1,57 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+class Stack:
+    def __init__(self):
+        self.top = None
+
+    def is_empty(self):
+        return self.top is None
+
+    def push(self, data):
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
+
+    def pop(self):
+        if self.is_empty():
+            return "Stack is Empty!"
+       
+        temp = self.top.data
+        self.top = self.top.next
+        return temp
+
+    def display(self):
+        if self.is_empty():
+            print("Stack is Empty!")
+            return
+       
+        temp = self.top
+        print("\n--- Stack Contents (Top to Bottom) ---")
+        while temp:
+            print(temp.data)
+            temp = temp.next
+stack = Stack()
+stack.push("Harry Potter")
+stack.push("Percy Jackson")
+stack.push("2 States")
+print("1. Push")
+print("2. Pop")
+print("3. Display\n")
+choice = int(input("Enter your choice: "))
+if choice == 1:
+    p = input("Enter book name: ")
+    stack.push(p)
+    print(f"Pushed '{p}' onto the stack.")
+elif choice == 2:
+    removed_element = stack.pop()
+    if removed_element == "Stack is Empty!":
+        print(removed_element)
+    else:
+        print("Popped:", removed_element)
+elif choice == 3:
+    stack.display()
+else:
+    print("Invalid option selected!")
+stack.display()
