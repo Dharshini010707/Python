@@ -48,3 +48,17 @@ elif choice == 2:
     dequeue()
 else:
     print("Invalid choice")
+
+
+Output:
+Inserted: 10
+Inserted: 20
+Inserted: 30
+Queue: [10, 20, 30]
+Deleted: 10
+Queue: [20, 30]
+1. Parking the car
+2. Getting the car from parking lot
+Enter your choice: 1
+Enter car name/number to park: 50
+Inserted: 50
