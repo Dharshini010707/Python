@@ -1,4 +1,4 @@
-def procedence(operator):
+def precedence(operator):
     if operator in ("+","-"):
         return 1
     elif operator in ("*","/"):
@@ -23,7 +23,7 @@ def infix_to_postfix(expression):
             if stack:
                 stack.pop()
         else:
-            while(stack and stack[-1] not in "([{" and procedence(stack[-1]) >= procedence(char)):
+            while(stack and stack[-1] not in "([{" and precedence(stack[-1]) >= precedence(char)):
                 postfix+=stack.pop()
             stack.append(char)
     while stack:
